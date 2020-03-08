@@ -63,16 +63,16 @@ locale: locale
 refreshFrequency: if settings.powerSaver then 60000 else 1000
 
 style: """
-  top: 50%
+  top: 54%
   opacity: 0.5
-  left: 50%
+  left: 43%
   font-family: 'Anurati', sans-serif
   letter-spacing: 4px
   font-size: 14px
   line-height: 1
   text-transform: uppercase
-  transform: translate(-50%, -50%) scale(0.5)
-
+  transform: translate(-50%, -50%) scale(0.2)
+  z-index: 4
   .container
     position: relative
     display: table
@@ -101,7 +101,8 @@ style: """
     color: #{ settings.colors.accent }
 
   .txt-small
-    margin-top: 55px
+    margin-top: 42px
+    margin-right: 8px
     font-size: 1.5rem
     font-weight: 500
 
@@ -119,7 +120,7 @@ render: () -> """
       <span class='hoursnum txt-default txt-large left'></span>
       <span class='hourstext txt-accent txt-small left'>hours</span>
       <span class='minutes txt-default txt-large left'></span>
-      <span class='minutestext txt-accent txt-small left'>minutes</span>
+      <span class='minutestext txt-accent txt-small left'>mins</span>
       <span class='seconds txt-default txt-large left'></span>
       <span class='secondstext txt-accent txt-small left conditional'>seconds</span>
     </div>

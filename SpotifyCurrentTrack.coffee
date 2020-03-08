@@ -16,17 +16,17 @@ echo "$theArtist - $theName"
 refreshFrequency: 2000
 
 style: """
-  top: 28%
-  left: 8.5%
-  color: #fff
-
+  top: 38%
+  left: 11.5%
+  color: #fff 
+  z-index: 3
   .some-class
+    opacity: 0.4
     font-family: Raleway
-    opacity: 0.5
-    //font-family: Helvetica Neue
-    font-size: 30px
-    font-weight: light
-    text-shadow: 0 1px 5px #000000;
+    // text-transform: uppercase
+    font-size: 24px
+    font-weight: bold
+    text-shadow: 0 0 0.625em rgba(0, 0, 0, .25)
 """
 
 render: (output) -> """
