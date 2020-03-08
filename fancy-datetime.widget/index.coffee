@@ -105,11 +105,12 @@ command: ""
 settings: settings
 locale: locale
 
-refreshFrequency: 1000
+refreshFrequency: 60000
 
 style: """
   position: absolute
   top: 0
+  font-family: 'Anurati', sans-serif
   left: 0
   width: 100%
   height: 100%
@@ -123,15 +124,17 @@ style: """
     background-size: cover;
     background-position: center;
   .layer
+    z-index: 5
     background-image: url('fancy-datetime.widget/assets/layer.png')
   .full
+    z-index: 2
     background-image: url('fancy-datetime.widget/assets/full.png')
   .container
+    z-index: 3
     position: absolute
     top: 44%
     left: 11%
     opacity: 0.5
-    font-family: 'Anurati', sans-serif
     letter-spacing: 4px
     font-size: 16px
     line-height: 1
