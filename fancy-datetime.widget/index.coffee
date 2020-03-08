@@ -105,7 +105,7 @@ command: ""
 settings: settings
 locale: locale
 
-refreshFrequency: 1000
+refreshFrequency: 60000
 
 style: """
   top: 20%
