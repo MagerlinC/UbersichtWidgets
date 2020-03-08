@@ -108,12 +108,11 @@ locale: locale
 refreshFrequency: 1000
 
 style: """
-  position: fixed
+  position: absolute
   top: 0
   left: 0
   width: 100%
   height: 100%
-
   .bg
     position: absolute
     top: 0
@@ -123,38 +122,21 @@ style: """
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
-
-  .trees
-    z-index: 2
-    background-image: url('./assets/trees.png')
-  .mountain
-    z-index: 2
-    background-image: url('./assets/mountain.png')
+  .layer
+    background-image: url('fancy-datetime.widget/assets/layer.png')
   .full
-    z-index: 0
-    background-image: url('./assets/full.png')
-
+    background-image: url('fancy-datetime.widget/assets/full.png')
   .container
-    z-index: 1
-    top: 25%
-    opacity: 0.8
-    left: 25%
+    position: absolute
+    top: 44%
+    left: 11%
+    opacity: 0.5
     font-family: 'Anurati', sans-serif
     letter-spacing: 4px
     font-size: 16px
     line-height: 1
     text-transform: uppercase
-    transform: translate(-50%, -50%)
-    position: relative
-    display: table
-    height: 100%
-    padding: 1rem 2rem
-    //border-radius: 1rem
-    //background: #{ settings.colors.background }
-    //box-shadow: #{ settings.shadows.box }
     text-shadow: #{ settings.shadows.text }
-    overflow: hidden
-    //-webkit-backdrop-filter: blur(10px)
 
   .cell
     position: relative
@@ -191,8 +173,6 @@ style: """
 render: () -> """
 <div class='wrapper'>
   <div class='full bg'/>
-  <div class='mountain bg'/>
-  <div class='trees bg'/>
   <div class='container'>
       <div class='cell'>
         <span class='hours txt-default txt-large left'></span>
@@ -213,6 +193,7 @@ render: () -> """
       </div>
       </div>
   </div>
+  <div class='layer bg'/>
 """
 
 afterRender: (domEl) ->
