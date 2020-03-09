@@ -195,8 +195,8 @@ render: () -> """
         <span class='year txt-accent'></span>
       </div>
       </div>
-  </div>
   <div class='layer bg'/>
+  </div>
 """
 
 afterRender: (domEl) ->
