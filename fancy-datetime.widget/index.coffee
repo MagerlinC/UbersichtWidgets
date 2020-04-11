@@ -140,12 +140,15 @@ style: """
     line-height: 1
     text-transform: uppercase
     text-shadow: #{ settings.shadows.text }
-
+  .above 
+    font-size: 16px !important
+    position: absolute
+    top: -10px
+    left: 87px
   .cell
     position: relative
     display: table-cell
     vertical-align: middle
-    overflow: hidden
 
   .left
     float: left
@@ -178,6 +181,7 @@ render: () -> """
   <div class='full bg'/>
   <div class='container'>
       <div class='cell'>
+        <span class='above txt-default txt-large left'></span>
         <span class='hours txt-default txt-large left'></span>
         <span class='minutes txt-accent txt-large left'></span>
         <span class='suffix txt-default txt-small'></span>
@@ -203,8 +207,10 @@ afterRender: (domEl) ->
 
 update: (output, domEl) ->
   date = @getDate()
+  usaHours = (parseInt(date.hours) + 8) % 24
 
   $(domEl).find('.hours').text(date.hours)
+  $(domEl).find('.above').text(@zeroFill(usaHours))
   $(domEl).find('.minutes').text(date.minutes)
   $(domEl).find('.suffix').text(date.suffix)
   $(domEl).find('.weekday').text(date.weekday)

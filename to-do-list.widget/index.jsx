@@ -14,13 +14,13 @@ const IGNORE_PASSED_DATES = true;
 const NOTES = [
   {
     text: "Cloud Computing - Research Outline",
-    done: false,
-    deadline: "2020-03-13"
+    done: true,
+    deadline: "2020-03-01"
   },
   {
     text: "Advanced IT PM - Individual",
     done: false,
-    deadline: "2020-03-27"
+    deadline: "2020-04-01"
   },
   {
     text: "Advanced IT PM - Team Assessment",
@@ -35,7 +35,12 @@ const NOTES = [
   {
     text: "Org Change - Personal Change",
     done: false,
-    deadline: "2020-03-24"
+    deadline: "2020-04-01"
+  },
+  {
+    text: "Cloud Computing - Threat Taxonomy",
+    done: false,
+    deadline: "2020-04-01"
   }
 ];
 
@@ -58,7 +63,7 @@ const notesListWrapper = css`
   display: flex;
   flex-direction: column;
   .note-item-deadline {
-    min-width: 80px;
+    min-width: 90px;
     text-align: center;
     background: rgba(23, 23, 23, 0.2);
     margin-right: 8px;
