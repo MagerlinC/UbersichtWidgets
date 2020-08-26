@@ -108,33 +108,36 @@ locale: locale
 refreshFrequency: 60000
 
 style: """
+  z-index: 5;
   position: absolute
   top: 0
-  font-family: 'Anurati', sans-serif
+  font-family: 'Helvetica', sans-serif
   left: 0
   width: 100%
   height: 100%
   .bg
-    position: absolute
+    position: fixed
     top: 0
     left: 0
     width: 100%
     height: 100%
+    margin: 0
+    padding: 0
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
   .layer
     z-index: 5
-    background-image: url('fancy-datetime.widget/assets/layer.png')
+    // background-image: url('fancy-datetime.widget/assets/m.png')
   .full
     z-index: 2
-    background-image: url('fancy-datetime.widget/assets/full.png')
+    // background-image: url('fancy-datetime.widget/assets/bg.jpg')
   .container
     z-index: 3
-    position: absolute
-    top: 44%
-    left: 11%
-    opacity: 0.5
+    position: fixed
+    top: 6%
+    left: 3%
+    opacity: 0.6
     letter-spacing: 4px
     font-size: 16px
     line-height: 1
@@ -207,7 +210,7 @@ afterRender: (domEl) ->
 
 update: (output, domEl) ->
   date = @getDate()
-  usaHours = (parseInt(date.hours) + 8) % 24
+  usaHours = (parseInt(date.hours) - 6) % 24
 
   $(domEl).find('.hours').text(date.hours)
   $(domEl).find('.above').text(@zeroFill(usaHours))
